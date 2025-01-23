@@ -32,12 +32,13 @@
 
         <div style="width: 75%; margin: auto; text-align: center; color: white;">
 
-            Categorías: 
+            Categorías: &nbsp;
 
             {% for post in posts %}
 
                 {% for x in post.categorias.all %}
-                    {{x.nombre}}
+
+                <a href="{% url 'categoria' x.id %}" class="linksCategorias">{{x.nombre}}</a> &nbsp; &nbsp;
 
                 {% endfor %}
             {% endfor %}
