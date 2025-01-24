@@ -5,7 +5,7 @@
 {% block content %}
 <div class="contenedorFormulario">
 
-    {% if "?valido" in request.get %}
+    {% if "valido" in request.GET %}
 
         <p style="color: white;">Información enviada correctamente, gracias</p>
 
@@ -17,5 +17,5 @@
         <input type="submit" value="Enviar" style="width: 150px;">
     </form>
 </div>
-<p style="color: snow">{{request.POST}}</p>   
+  
 {% endblock %}
