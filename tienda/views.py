@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from tienda.models import Venta, Servicio
+from .models import Venta, Servicio
 # Create your views here.
 
 def tienda(request):
@@ -7,9 +7,8 @@ def tienda(request):
 
     # Crear un conjunto único de servicios
     servicios = set()
-    for venta in ventas:
-        for servicio in venta.servicios.all():
-            servicios.add(servicio)
+    for x in ventas:
+            servicios.add(x.servicios)
 
     return render(request, "tienda/tienda.html", {"ventas": ventas, "servicios": servicios})
 

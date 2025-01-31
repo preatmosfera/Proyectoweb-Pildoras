@@ -17,27 +17,24 @@
 
 </section>
 
-{% for venta in ventas %}
-
-    <section class="page-section clearfix">
-        <div class="container">
-          <div class="intro">
-            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{venta.imagen.url}}" alt="" style="width: 50%;">
-            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-              <h2 class="section-heading mb-4" >
-                <span class="section-heading-lower">{{venta.producto}}</span>
-                <span class="section-heading-upper">{{venta.descripcion}}</span>
-                <span class="section-heading-upper">$ {{venta.precio}}</span>
-              </h2>
-          
-            
-            </div>
-          </div>
-        </div>
-      </section>
-
-    
-    {% endfor %}
-
+<div class="container mt-4">
+  <div class="row">
+      {% for venta in ventas %}
+          <div class="col-md-4 mb-4">  <!-- Define el ancho de la tarjeta -->
+              <div class="card">
+                  
+                <img src="{{ venta.imagen.url }}" class="card-img-top" alt="{{ venta.producto }}" style="height: 250px; object-fit: cover;">
+                  <div class="card-body" style="text-align: center;">
+                      <h5 class="card-title">{{ venta.producto }}</h5>
+                      <p class="card-text">{{ venta.descripcion }}</p>
+                      <p class="card-text"><strong>Precio:</strong> ${{ venta.precio }}</p>
+                      <p class="card-text"><strong>Servicio:</strong> {{ venta.servicios.tipo }}</p>
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                  </div>
+              </div>
+          </div> <!-- col que se cierra -->
+      {% endfor %}
+  </div> <!-- fila que se cierra -->
+</div>
 
 {% endblock %}

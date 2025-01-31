@@ -16,10 +16,11 @@ class Servicio(models.Model):
     
 class Venta(models.Model):
     producto=models.CharField(max_length=50)
-    descripcion=models.CharField(max_length=50)
+    descripcion=models.CharField(max_length=100)
     imagen=models.ImageField(upload_to='tienda', null=True, blank=True)
     precio=models.DecimalField(max_digits=10, decimal_places=2)
-    servicios=models.ManyToManyField(Servicio)
+    servicios=models.ForeignKey(Servicio, on_delete=models.CASCADE)
+    disponibilidad=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now_add=True)
 
