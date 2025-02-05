@@ -5,6 +5,7 @@ class Carro:
         carro = self.session.get("carro")
         if not carro:
             carro = self.session["carro"] = {}
+        
         self.carro = carro  # Asegurar que self.carro siempre esté definido
 
     def agregar(self, producto):
