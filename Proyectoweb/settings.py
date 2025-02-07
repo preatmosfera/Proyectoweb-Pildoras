@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'tienda',
     'carro',
     'autenticacion',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +145,5 @@ EMAIL_USE_TLS = True  # Habilita TLS para una conexión segura.
 EMAIL_HOST_USER = "juancasco.neuquen@gmail.com"  # Tu dirección de correo electrónico.
 EMAIL_HOST_PASSWORD = "xxxxxxxxxxxxxxxxxxxxxxx"  # La contraseña del correo (puede ser un token de aplicación).
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK="bootstrap4"
