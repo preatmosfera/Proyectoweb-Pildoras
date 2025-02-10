@@ -11,7 +11,14 @@
             <!-- Carrito de compras (sidebar) -->
             <div class="col-md-4 order-md-2">  <!-- Aumentamos de 3 a 4 columnas -->
                 <div class="card p-3 text-center" style="background-color: #f8f9fa; position: sticky; top: 100px;">
-                    {% include "carro/widget.html" %}
+                    
+                    {% if request.user.is_authenticated %}
+                        {% include "carro/widget.html" %}
+                    {% else %}
+                        <h5 class="mb-3">Inicia sesión para comprar</h5>
+                    {% endif %}
+                    
+                    
                 </div>
             </div>
     
