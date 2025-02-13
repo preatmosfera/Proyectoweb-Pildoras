@@ -9,7 +9,7 @@ from django.core.mail import send_mail
 
 # Create your views here.
 
-@login_required(login_url="/autenticacion/loguear")
+@login_required(login_url="/autenticacion/logear")
 def procesar_pedido(request):
     pedido=Pedido.objects.create(user=request.user)
     carro=Carro(request)
